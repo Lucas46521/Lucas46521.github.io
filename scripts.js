@@ -1,39 +1,66 @@
-// Adicione seus projetos aqui
-const projects = [
-    {
-        title: "Minecraft House",
-        image: "https://via.placeholder.com/300",
-        description: "Build your dream house in Minecraft!"
-    },
-    {
-        title: "Pixel Art Gallery",
-        image: "https://via.placeholder.com/300",
-        description: "Explore amazing pixel art creations."
-    },
-    {
-        title: "Redstone Contraptions",
-        image: "https://via.placeholder.com/300",
-        description: "Learn how to build complex machines using redstone."
-    }
-];
+// Carrega os projetos do arquivo JSON
+fetch('projects.json')
+    .then(response => response.json())
+    .then(data => {
+        const projectsContainer = document.getElementById('projects');
 
-const projectsContainer = document.getElementById('projects');
+        data.forEach(project => {
+            const projectElement = document.createElement('div');
+            projectElement.classList.add('project');
 
-projects.forEach(project => {
-    const projectElement = document.createElement('div');
-    projectElement.classList.add('project');
+            const imageElement = document.createElement('img');
+            imageElement.src = project.image;
+            projectElement.appendChild(imageElement);
+
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = project.title;
+            projectElement.appendChild(titleElement);
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = project.description;
+            projectElement.appendChild(descriptionElement);
+
+            if (project.download_link !== "none") {
+                const downloadButton = document.createElement('a');
+                downloadButton.href = project.download_link;
+                downloadButton.classList.add('download-button');
+                downloadButton.textContent = "Download";
+                projectElement.appendChild(downloadButton);
+            }
+
+            // Adiciona um event listener para redirecionar para o link fornecido em red_link
+            projectElement.addEventListener('click', function() {
+                if (project.red_link) {
+                    window.location.href = project.red_link;
+                } else {
+                    renderProjectPage(project);
+                }
+            });
+
+            projectsContainer.appendChild(projectElement);
+        });
+    });
+
+function renderProjectPage(project) {
+    // Cria uma nova página para o projeto selecionado
+    const projectPage = document.createElement('div');
+    projectPage.classList.add('project-page');
 
     const imageElement = document.createElement('img');
     imageElement.src = project.image;
-    projectElement.appendChild(imageElement);
-
-    const titleElement = document.createElement('h2');
-    titleElement.textContent = project.title;
-    projectElement.appendChild(titleElement);
+    projectPage.appendChild(imageElement);
 
     const descriptionElement = document.createElement('p');
     descriptionElement.textContent = project.description;
-    projectElement.appendChild(descriptionElement);
+    projectPage.appendChild(descriptionElement);
 
-    projectsContainer.appendChild(projectElement);
-});
+    if (project.download_link !== "none") {
+        const downloadButton = document.createElement('a');
+        downloadButton.href = project.download_link;
+        downloadButton.classList.add('download-button');
+        downloadButton.textContent = "Download";
+        projectPage.appendChild(downloadButton);
+    }
+
+    document.body.appendChild(projectPage);
+}
