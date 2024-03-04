@@ -177,86 +177,46 @@ h1 {
 }
 
 .download-button, .access-button {
-    background-color: #4CAF50;
-    border: none;
+    font-size: 25px;
     color: white;
-    padding: 3px 10px; /* Reduz o padding vertical para diminuir a altura */
-    text-align: center;
-    text-decoration: none;
+    height: auto;
+    margin: 10px;
+    font-family: 'VT323';
+    position: relative;
     display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-    border-radius: 5px;
-    /* Aplica as bordas pixeladas aos botões */
-    box-shadow: 
-        0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
-        0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
-        0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
-        0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
-        0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
-        0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
-        0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
-        0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
-        calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
-        var(--pixel) 0 0 0 var(--pixel-border),
-        0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
-        0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
-        0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
-        0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
-        0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
-        0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
-        0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
-        0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
-        0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
-        0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
-        calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
-        calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
-        0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2), 
-        0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
-        0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
-        0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
-        0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
-        0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
-        0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
-        0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
-        0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
-        0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
-        0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
-        0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
-        calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
-        calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
-        0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
-        0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
-        0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
-        0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
-         0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
-        0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
-        0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
-        0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3), 
-        0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
-        0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3), 
-        0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
-        0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3), 
-        0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+    vertical-align: top;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 0;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    border-style: solid;
+    border-width: 20px;
+    background: #000000;
+    background: linear-gradient(135deg, transparent 10px, #000000 0) top left, linear-gradient(225deg, transparent 10px, #000000 0) top right, linear-gradient(315deg, transparent 10px, #000000 0) bottom right, linear-gradient(45deg, transparent 10px, #000000 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #000000 15px), radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #000000 15px), radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px), radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
 }
 
-/* Cor diferente para o botão de acesso */
-.access-button {
-    background-color: #f44336; /* Cor vermelha */
-}
-
-/* Mudança de cor das bordas interna e externa */
 .download-button {
-    --pixel-border: #333; /* Cor da borda interna */
-    --pixel-border-3: #000; /* Cor da borda externa */
+    border-color: #4CAF50; /* Cor da borda do botão de download */
 }
 
 .access-button {
-    --pixel-border: #ff1744; /* Cor da borda interna */
-    --pixel-border-3: #b71c1c; /* Cor da borda externa */
+    border-color: #f44336; /* Cor da borda do botão de acesso */
 }
 
 .download-button:hover, .access-button:hover {
-    cursor: pointer;
     opacity: 0.8;
 }
