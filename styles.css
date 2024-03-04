@@ -44,7 +44,7 @@ h1 {
     font-size: 24px;
 }
 
-.download-button {
+.download-button, .access-button {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -55,4 +55,9 @@ h1 {
     font-size: 16px;
     margin-top: 10px;
     border-radius: 5px;
+}
+
+.access-button {
+    background-color: #007bff;
+    margin-left: 10px;
 }
