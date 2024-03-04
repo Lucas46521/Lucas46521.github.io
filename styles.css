@@ -30,7 +30,7 @@ h1 {
 #projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Alinha os botões à esquerda */
+    justify-content: center;
     padding: 20px;
 }
 
@@ -88,6 +88,7 @@ h1 {
         0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
         0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3), 
         0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+    width: 300px;
 }
 
 .project img {
@@ -104,7 +105,7 @@ h1 {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 5px 10px; /* Reduz o tamanho dos botões */
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -162,6 +163,17 @@ h1 {
         0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
         0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3), 
         0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+    width: 300px;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.project h2 {
+    margin-top: 10px;
+    font-size: 24px;
 }
 
 .download-button, .access-button {
@@ -226,6 +238,22 @@ h1 {
         0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
         0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3), 
         0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+}
+
+/* Cor diferente para o botão de acesso */
+.access-button {
+    background-color: #f44336; /* Cor vermelha */
+}
+
+/* Mudança de cor das bordas interna e externa */
+.download-button {
+    --pixel-border: #333; /* Cor da borda interna */
+    --pixel-border-3: #000; /* Cor da borda externa */
+}
+
+.access-button {
+    --pixel-border: #ff1744; /* Cor da borda interna */
+    --pixel-border-3: #b71c1c; /* Cor da borda externa */
 }
 
 .download-button:hover, .access-button:hover {
