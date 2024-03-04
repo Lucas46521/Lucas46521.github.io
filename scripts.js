@@ -1,3 +1,4 @@
+// Carrega os projetos do arquivo JSON
 fetch('projects.json')
     .then(response => response.json())
     .then(data => {
@@ -19,19 +20,23 @@ fetch('projects.json')
             descriptionElement.textContent = project.description;
             projectElement.appendChild(descriptionElement);
 
-            // Verifica se o projeto tem um red_link
+            if (project.download_link !== "none") {
+                const downloadButton = document.createElement('a');
+                downloadButton.href = project.download_link;
+                downloadButton.classList.add('download-button');
+                downloadButton.textContent = "Download";
+                projectElement.appendChild(downloadButton);
+            }
+
+            // Adiciona um event listener para redirecionar para o link fornecido em red_link
             if (project.red_link) {
-                const accessButton = document.createElement('button');
-                accessButton.textContent = "Acessar";
+                const accessButton = document.createElement('a');
+                accessButton.href = project.red_link;
                 accessButton.classList.add('access-button');
-                // Adiciona um event listener para redirecionar para o red_link
-                accessButton.addEventListener('click', function() {
-                    window.location.href = project.red_link;
-                });
+                accessButton.textContent = "Acessar";
                 projectElement.appendChild(accessButton);
             }
 
-            // Adiciona um event listener para renderizar a página do projeto
             projectElement.addEventListener('click', function() {
                 if (!project.red_link) {
                     renderProjectPage(project);
@@ -43,6 +48,7 @@ fetch('projects.json')
     });
 
 function renderProjectPage(project) {
+    // Cria uma nova página para o projeto selecionado
     const projectPage = document.createElement('div');
     projectPage.classList.add('project-page');
 
@@ -54,7 +60,6 @@ function renderProjectPage(project) {
     descriptionElement.textContent = project.description;
     projectPage.appendChild(descriptionElement);
 
-    // Verifica se o projeto tem um link de download
     if (project.download_link !== "none") {
         const downloadButton = document.createElement('a');
         downloadButton.href = project.download_link;
