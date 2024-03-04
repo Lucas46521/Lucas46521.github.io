@@ -4,7 +4,7 @@
     --pixel-border-2: white; /* Middle border color: */
     --pixel-border-3: var(--pixel-border); /* Outer border color */
     --pixel: .125rem; /* Pixel size */
-    --minecraft-font: 'MinecraftiaRegular'; /* Minecraftia font */
+    --minecraft-font: 'Minecraftia'; /* Minecraftia font */
 }
 
 body {
