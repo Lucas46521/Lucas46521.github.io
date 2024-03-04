@@ -65,14 +65,14 @@ h1 {
 
 /* Estilo de pixel art para os botões */
 .download-button, .access-button {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P';
     font-size: 14px;
     padding: 8px 16px;
 }
 
 /* Estilo de pixel art para o texto */
 h1, h2, p {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P';
     font-size: 16px;
     letter-spacing: 1px;
 }
