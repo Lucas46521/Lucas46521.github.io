@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Minecraft House",
+        "image": "https://via.placeholder.com/300",
+        "description": "Build your dream house in Minecraft!",
+        "download_link": "https://example.com/download/minecraft_house.zip",
+        "red_link": null
+    },
+    {
+        "title": "Pixel Art Gallery",
+        "image": "https://via.placeholder.com/300",
+        "description": "Explore amazing pixel art creations.",
+        "download_link": "none",
+        "red_link": "https://example.com/pixel_art_gallery"
+    },
+    {
+        "title": "Redstone Contraptions",
+        "image": "https://via.placeholder.com/300",
+        "description": "Learn how to build complex machines using redstone.",
+        "download_link": "https://example.com/download/redstone_contraptions.zip",
+        "red_link": null
+    }
+]
