@@ -134,7 +134,7 @@ h1 {
     -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
     border-style: solid;
     border-width: 20px;
-    border-color: black;
+    border-color: black; /* Defina a cor da borda aqui */
 }
 
 .download-button {
@@ -147,7 +147,7 @@ h1 {
     -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
     border-style: solid;
     border-width: 20px;
-    border-color: black;
+    border-color: black; /* Defina a cor da borda aqui */
 }
 
 .access-button p, .download-button p {
