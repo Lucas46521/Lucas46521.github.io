@@ -118,6 +118,8 @@ h1 {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    padding: 20px; /* Adicionando padding para ampliar a área visível da borda */
+    box-sizing: border-box; /* Mantendo o tamanho total do botão incluindo o padding */
 }
 
 .access-button:active, .download-button:active {
