@@ -1,12 +1,13 @@
 body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #bde3f7;
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 header {
-    background-color: #4c4c4c;
+    background-color: #1a1a1a;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -15,8 +16,6 @@ header {
 h1 {
     margin: 0;
     font-size: 36px;
-    font-weight: normal;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #projects {
@@ -29,21 +28,31 @@ h1 {
 .project {
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #333;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     width: 300px;
-    font-size: 16px;
 }
 
 .project img {
     max-width: 100%;
     border-radius: 5px;
-    image-rendering: pixelated;
 }
 
 .project h2 {
     margin-top: 10px;
     font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.download-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
