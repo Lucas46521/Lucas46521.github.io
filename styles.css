@@ -37,6 +37,8 @@ h1 {
 .project {
     margin: 20px;
     padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
     /* Utiliza múltiplas box-shadow para criar a aparência de pixel art */
     box-shadow: 
         0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
@@ -94,11 +96,24 @@ h1 {
 .project img {
     max-width: 100%;
     border-radius: 5px;
+    /* Adiciona uma borda pixelada à imagem */
+    box-shadow:
+        0 0 0 1px var(--pixel-border),
+        0 0 0 2px var(--pixel-border),
+        0 0 0 3px var(--pixel-border),
+        0 0 0 4px var(--pixel-border),
+        0 0 0 5px var(--pixel-border),
+        0 0 0 6px var(--pixel-border),
+        0 0 0 7px var(--pixel-border),
+        0 0 0 8px var(--pixel-border),
+        0 0 0 9px var(--pixel-border),
+        0 0 0 10px var(--pixel-border);
 }
 
 .project h2 {
     margin-top: 10px;
     font-size: 24px;
+    text-align: center;
 }
 
 .download-button, .access-button {
@@ -112,6 +127,12 @@ h1 {
     font-size: 16px;
     margin-top: 10px;
     border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover, .access-button:hover {
+    background-color: #45a049;
 }
 
 .access-button {
