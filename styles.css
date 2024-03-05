@@ -4,7 +4,7 @@
 }
 
 :root {
-    --pixel-bg: #1a1a1a; /* Inner background color */
+    --pixel-bg: #2b2b2b; /* Inner background color */
     --pixel-border: black; /* Inner border color: */
     --pixel-border-2: white; /* Middle border color: */
     --pixel-border-3: var(--pixel-border); /* Outer border color */
