@@ -3,21 +3,21 @@
         "title": "Improved Pack",
         "image": "https://cdn.discordapp.com/attachments/1015632842748870707/1214420747024466023/pack_icon.png?ex=65f90c74&is=65e69774&hm=b33bd9dd72e22752d95c6b0be8abf7b8ef996a9bb9b914e0a4f1b364de7471f1&",
         "description": "Uma textura que lhe dará uma experiência excepcional em jogo.",
-        "download_link": "https://www.mediafire.com/file/70dya5amn0a5tgy/Improved-pack.mcaddon/file",
+        "download_link": "https://www.dropbox.com/scl/fi/un51nwg6h23c2m7txgzxr/Improved-pack.mcaddon?rlkey=cwbsiuw0drqx86c0tcjyli08l&dl=0",
         "red_link": null
     },
     {
-        "title": "Pixel Art Gallery",
+        "title": "Minecraft add external server",
         "image": "https://via.placeholder.com/300",
-        "description": "Explore amazing pixel art creations.",
+        "description": "Uma forma preguiçosa de exportar servidores diretamnte para o Minecraft.",
         "download_link": "none",
-        "red_link": "https://example.com/pixel_art_gallery"
+        "red_link": "https://Lucas46521.github.io/AddExternalServer/"
     },
     {
-        "title": "Redstone Contraptions",
+        "title": "Minecraft Message Builder",
         "image": "https://via.placeholder.com/300",
-        "description": "Learn how to build complex machines using redstone.",
-        "download_link": "https://example.com/download/redstone_contraptions.zip",
-        "red_link": null
+        "description": "Veja como ficariam seus textos formatados dentro do minecraft.",
+        "download_link": null
+        "red_link": "https://lucas46521.github.io/Minecraft-msg-builder/"
     }
 ]
