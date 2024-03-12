@@ -19,5 +19,12 @@
         "description": "Veja como ficariam seus textos formatados dentro do minecraft.",
         "download_link": "none",
         "red_link": "https://lucas46521.github.io/Minecraft-msg-builder/"
+    },
+    {
+        "title": "Minecraft Seed Viewer",
+        "image": "https://via.placeholder.com/300",
+        "description": "Um Visualizador de mapas/seeds online.",
+        "download_link": "none",
+        "red_link": "https://mcseedmap.net/"
     }
 ]
