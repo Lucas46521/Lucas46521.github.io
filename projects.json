@@ -29,7 +29,7 @@
     },
     {
         "title": "Minecraft Seed Viewer",
-        "image": "https://via.placeholder.com/300",
+        "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84PTQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc1Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Mv/AABEIACAAIAMBEQACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAGBQQC/8QAJhAAAgEDAwQBBQAAAAAAAAAAAQIDAAQRBRIhIjFBUQYHFDKhwf/EABoBAAIDAQEAAAAAAAAAAAAAAAQFAgYHAQP/xAAoEQABAwMDAwMFAAAAAAAAAAABAgMRAAQhBRIxBlFhQaHhExUicoH/2gAMAwEAAhEDEQA/ADOoWMV9Dsfhh+L+qB0XW39Ke3oyk8p7/PmhCJqXNp50uykuYriT7hSArr08EgYxVzsOoPvt8m0dZH0iCSD+WRmZx49KgUwKdfDi03x+0uJeuZw+5z3OHYfwVVeoLZi21R1tlISkRgfqDU08VbpRXaCvNGjhWYAntQ6W1KEgVBTiUmCaw6o4lRrfpMbAEkd8000p92zeTctmFD3Hb+0M+8QYFRpkntEV7aeUKhzjd2rRNI11vUXSxdIAUriBzjj1zE1xt7cYNNvhVxrWob73ULovaEFY1IXqbPfj1j90g6oY0uzi2tm4c5Jzgds9/Hai0yaNFZZGYlXY5547VWRtSABSwpWskxNdz2s9vI0c0LqynDDHauJcQsSk1Nds82ooUkyKzyxiRCjjg+KMs7ldq+h5Byk/B9q8gSkzSL6fXrIlxptzMoKYaGPHgk7iD55x3p71Qhq8Q1qNsk7VSFHsREAjxnjHmmTSwoYppFBDCztDEiNIdzlVxuPs+6ytS1KACjMVfENNtklCQJ581m1jadPk3sQOMYGec8V6W8/UEUQ0TuoBqkIin3DGHGcAYxVktVFadvrVG6htE293uTwvMREenvzUuxvYLTX7W7lYmGJgWKcnzWm6fp9yrQl2pTtWrdg45NLmAUjNf//Z",
         "description": "Um Visualizador externo de mapas/seeds online. ps: Não é de minha autoria",
         "download_link": "none",
         "red_link": "https://mcseedmap.net/"
