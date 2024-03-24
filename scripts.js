@@ -10,6 +10,7 @@ fetch('projects.json')
 
             const imageElement = document.createElement('img');
             imageElement.src = project.image;
+            imageElement.classList.add('no-click'); // Adiciona a classe no-click à imagem
             projectElement.appendChild(imageElement);
 
             const titleElement = document.createElement('h2');
@@ -70,3 +71,10 @@ function renderProjectPage(project) {
 
     document.body.appendChild(projectPage);
 }
+
+// Adiciona um event listener global para imagens com a classe 'no-click'
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('no-click')) {
+        event.preventDefault(); // Impede o comportamento padrão do clique na imagem
+    }
+});
