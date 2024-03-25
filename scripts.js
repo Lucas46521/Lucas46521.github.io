@@ -5,6 +5,7 @@ let loadingProjects = false; // Flag para evitar múltiplas solicitações de ca
 // Exibe o indicador de carregamento animado
 const loadingSpinner = document.getElementById('loading-spinner');
 const projectsContainer = document.getElementById('projects');
+const searchInput = document.getElementById('searchInput');
 
 function fetchProjects() {
     loadingSpinner.style.display = 'block';
@@ -27,56 +28,70 @@ function fetchProjects() {
 }
 
 function renderProjects() {
-    const projectsToRender = projectsData.slice(projectsDisplayed, projectsDisplayed + 2);
+    // Limpa os projetos atualmente exibidos
+    projectsContainer.innerHTML = '';
+    projectsDisplayed = 0;
 
-    projectsToRender.forEach(project => {
-        const projectElement = document.createElement('div');
-        projectElement.classList.add('project');
-
-        const imageElement = document.createElement('img');
-        imageElement.src = project.image;
-        projectElement.appendChild(imageElement);
-
-        const textContainer = document.createElement('div');
-        textContainer.classList.add('text-container');
-
-        const titleElement = document.createElement('h2');
-        titleElement.textContent = project.title;
-        textContainer.appendChild(titleElement);
-
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = project.description;
-        textContainer.appendChild(descriptionElement);
-
-        projectElement.appendChild(textContainer);
-
-        if (project.download_link !== "none" || project.red_link) {
-            const buttonsContainer = document.createElement('div');
-            buttonsContainer.classList.add('buttons-container');
-
-            if (project.download_link !== "none") {
-                const downloadButton = document.createElement('a');
-                downloadButton.href = project.download_link;
-                downloadButton.classList.add('download-button');
-                downloadButton.textContent = "Download";
-                buttonsContainer.appendChild(downloadButton);
-            }
-
-            if (project.red_link) {
-                const accessButton = document.createElement('a');
-                accessButton.href = project.red_link;
-                accessButton.classList.add('access-button');
-                accessButton.textContent = "Acessar";
-                buttonsContainer.appendChild(accessButton);
-            }
-
-            projectElement.appendChild(buttonsContainer);
-        }
-
-        projectsContainer.appendChild(projectElement);
+    const searchText = searchInput.value.trim().toLowerCase();
+    const filteredProjects = projectsData.filter(project => {
+        return project.title.toLowerCase().includes(searchText) || project.description.toLowerCase().includes(searchText);
     });
 
-    projectsDisplayed += projectsToRender.length;
+    if (filteredProjects.length === 0) {
+        const errorElement = document.createElement('p');
+        errorElement.textContent = 'Nenhum projeto encontrado.';
+        errorElement.classList.add('error-message');
+        projectsContainer.appendChild(errorElement);
+    } else {
+        filteredProjects.forEach(project => {
+            const projectElement = document.createElement('div');
+            projectElement.classList.add('project');
+
+            const imageElement = document.createElement('img');
+            imageElement.src = project.image;
+            projectElement.appendChild(imageElement);
+
+            const textContainer = document.createElement('div');
+            textContainer.classList.add('text-container');
+
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = project.title;
+            textContainer.appendChild(titleElement);
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = project.description;
+            textContainer.appendChild(descriptionElement);
+
+            projectElement.appendChild(textContainer);
+
+            if (project.download_link !== "none" || project.red_link) {
+                const buttonsContainer = document.createElement('div');
+                buttonsContainer.classList.add('buttons-container');
+
+                if (project.download_link !== "none") {
+                    const downloadButton = document.createElement('a');
+                    downloadButton.href = project.download_link;
+                    downloadButton.classList.add('download-button');
+                    downloadButton.textContent = "Download";
+                    buttonsContainer.appendChild(downloadButton);
+                }
+
+                if (project.red_link) {
+                    const accessButton = document.createElement('a');
+                    accessButton.href = project.red_link;
+                    accessButton.classList.add('access-button');
+                    accessButton.textContent = "Acessar";
+                    buttonsContainer.appendChild(accessButton);
+                }
+
+                projectElement.appendChild(buttonsContainer);
+            }
+
+            projectsContainer.appendChild(projectElement);
+        });
+
+        projectsDisplayed += filteredProjects.length;
+    }
 }
 
 // Função para verificar se a página chegou ao final
@@ -93,3 +108,6 @@ window.addEventListener('scroll', () => {
 
 // Carregar projetos iniciais
 fetchProjects();
+
+// Adicionar evento de input ao campo de pesquisa
+searchInput.addEventListener('input', renderProjects);
