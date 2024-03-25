@@ -10,9 +10,16 @@
 <header>
         <h1>Minecraft Projects Hub</h1>
 </header>
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Pesquisar...">
+    <button onclick="searchProjects()">Pesquisar</button>
+</div>
     
-<div id="loading-spinner" class="spinner"></div>
-<div id="projects"></div>
+<div id="projects" class="projects-container">
+    <!-- Projetos são renderizados aqui -->
+</div>
+<div id="loading-spinner" class="loading-spinner"></div>
+<div id="load-more-button" class="load-more-button">Carregar Mais</div>
 
 <script src="scripts.js"></script>
 </body>
