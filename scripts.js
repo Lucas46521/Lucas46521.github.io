@@ -28,22 +28,26 @@ function fetchProjects() {
 }
 
 function renderProjects() {
-    // Limpa os projetos atualmente exibidos
-    projectsContainer.innerHTML = '';
-    projectsDisplayed = 0;
-
     const searchText = searchInput.value.trim().toLowerCase();
     const filteredProjects = projectsData.filter(project => {
         return project.title.toLowerCase().includes(searchText) || project.description.toLowerCase().includes(searchText);
     });
 
-    if (filteredProjects.length === 0) {
-        const errorElement = document.createElement('p');
-        errorElement.textContent = 'Nenhum projeto encontrado.';
-        errorElement.classList.add('error-message');
-        projectsContainer.appendChild(errorElement);
-    } else {
-        filteredProjects.forEach(project => {
+    // Calcula o número de projetos a serem exibidos com base no tamanho da tela
+    const minProjectsPerLoad = 3;
+    let maxProjectsPerLoad = Math.floor(window.innerHeight / 250); // Ajuste conforme necessário
+    maxProjectsPerLoad = Math.max(maxProjectsPerLoad, minProjectsPerLoad);
+
+    let projectsToRender = filteredProjects.slice(projectsDisplayed, projectsDisplayed + maxProjectsPerLoad);
+
+    if (projectsDisplayed >= filteredProjects.length) {
+        loadingSpinner.style.display = 'none';
+        return; // Todos os projetos já foram carregados, não há mais nada para renderizar
+    }
+
+    let loadedUnseenProject = false;
+    projectsToRender.forEach(project => {
+        if (!project.isLoaded) {
             const projectElement = document.createElement('div');
             projectElement.classList.add('project');
 
@@ -88,9 +92,19 @@ function renderProjects() {
             }
 
             projectsContainer.appendChild(projectElement);
-        });
 
-        projectsDisplayed += filteredProjects.length;
+            // Marca o projeto como carregado
+            project.isLoaded = true;
+            loadedUnseenProject = true;
+        }
+    });
+
+    // Atualiza a contagem de projetos exibidos
+    projectsDisplayed += projectsToRender.length;
+
+    // Se não houver mais projetos a serem carregados ou nenhum projeto carregado, oculta o indicador de carregamento
+    if (!loadedUnseenProject || projectsDisplayed >= filteredProjects.length) {
+        loadingSpinner.style.display = 'none';
     }
 }
 
