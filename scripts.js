@@ -1,4 +1,3 @@
-// Carrega os projetos do arquivo JSON
 fetch('projects.json')
     .then(response => response.json())
     .then(data => {
@@ -38,8 +37,8 @@ fetch('projects.json')
                 projectElement.appendChild(accessButton);
             }
 
-            projectElement.addEventListener('click', function() {
-                if (!project.red_link) {
+            projectElement.addEventListener('click', function(event) {
+                if (!event.target.classList.contains('download-button') && !project.red_link) {
                     renderProjectPage(project);
                 }
             });
