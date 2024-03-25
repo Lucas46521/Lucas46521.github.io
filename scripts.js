@@ -68,7 +68,10 @@ function renderProjectPage(project) {
         projectPage.appendChild(downloadButton);
     }
 
-    document.body.appendChild(projectPage);
+    // Verifica se o link de download já está presente na página atual antes de adicioná-lo novamente
+    if (!document.querySelector(`a[href="${project.download_link}"]`)) {
+        document.body.appendChild(projectPage);
+    }
 }
 
 // Adiciona um event listener global para imagens com a classe 'no-click'
