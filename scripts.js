@@ -1,3 +1,6 @@
+// Exibe o indicador de carregamento animado
+document.getElementById('loading-spinner').style.display = 'block';
+
 fetch('projects.json')
     .then(response => response.json())
     .then(data => {
@@ -9,7 +12,6 @@ fetch('projects.json')
 
             const imageElement = document.createElement('img');
             imageElement.src = project.image;
-            imageElement.classList.add('no-click'); // Adiciona a classe no-click à imagem
             projectElement.appendChild(imageElement);
 
             const titleElement = document.createElement('h2');
@@ -37,14 +39,17 @@ fetch('projects.json')
                 projectElement.appendChild(accessButton);
             }
 
-            projectElement.addEventListener('click', function(event) {
-                if (!event.target.classList.contains('download-button') && !project.red_link) {
+            projectElement.addEventListener('click', function() {
+                if (!project.red_link) {
                     renderProjectPage(project);
                 }
             });
 
             projectsContainer.appendChild(projectElement);
         });
+
+        // Remove o indicador de carregamento animado quando os projetos forem totalmente carregados
+        document.getElementById('loading-spinner').style.display = 'none';
     });
 
 function renderProjectPage(project) {
@@ -68,15 +73,5 @@ function renderProjectPage(project) {
         projectPage.appendChild(downloadButton);
     }
 
-    // Verifica se o link de download já está presente na página atual antes de adicioná-lo novamente
-    if (!document.querySelector(`a[href="${project.download_link}"]`)) {
-        document.body.appendChild(projectPage);
-    }
+    document.body.appendChild(projectPage);
 }
-
-// Adiciona um event listener global para imagens com a classe 'no-click'
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('no-click')) {
-        event.preventDefault(); // Impede o comportamento padrão do clique na imagem
-    }
-});
