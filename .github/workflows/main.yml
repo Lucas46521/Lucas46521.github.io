@@ -40,7 +40,7 @@ jobs:
         with:
           # Webhook token
           webhook_id: '1234567'
-          webhook_token: ${{ secrets.webhook_token }}
+          webhook_token: ${{ secrets.DISCORD_WEBHOOK }}
 
           # We need to provide the information of the workflow that
           # triggered this workflow instead of this workflow.
