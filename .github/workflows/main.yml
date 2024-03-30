@@ -1,5 +1,4 @@
 name: Webhook on Event
-
 on:
   push:
   pull_request:
