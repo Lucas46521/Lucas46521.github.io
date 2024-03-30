@@ -32,7 +32,7 @@ jobs:
           "embeds": [
             {
               "type": "rich",
-              "title": "${{ github.workflow }}: {{STATUS}}",
+              "title": "New Changes",
               "description": "The ${{ github.event_name }} event triggered New changes on ${{ github.repository }} triggered by ${{ github.actor }}",
               "color": 2123412,
               "thumbnail": {
