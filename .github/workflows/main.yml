@@ -26,14 +26,14 @@ jobs:
       - name: Send a request to webhook
         if: success()
         run: |
-          RESPONSE=$(curl -H "Content-Type: application/json" -X POST -d '{
+          RESPONSE=$(curl -H "X-GitHub-Api-Version: 2022-11-28" \ -H "Content-Type: application/json" -X POST -d '{
           "username": "GitHub",
           "content": "",
           "embeds": [
             {
               "type": "rich",
               "title": "New Changes",
-              "description": "${{ github.repository }}",
+              "description": "The ${{ github.event.name }} event triggered ${{ github.repository.url }} New changes on ${{ github.repository }} triggered by ${{ github.actor }}",
               "color": 2123412,
               "thumbnail": {
                 "url": "https://avatars.githubusercontent.com/u/160980408?v=4"
