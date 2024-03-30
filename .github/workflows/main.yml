@@ -47,3 +47,4 @@ jobs:
           ]
           }' ${{ secrets.DISCORD_WEBHOOK }})
           echo "Webhook server response: $RESPONSE"
+          
