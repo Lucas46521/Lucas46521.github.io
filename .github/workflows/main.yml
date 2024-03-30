@@ -29,5 +29,5 @@ jobs:
             "url": "https://github.com/***"
           }
         ]
-        }' ${{ secrets.WEBHOOK_URL }})
+        }' ${{ secrets.DISCORD_WEBHOOK }})
         echo "Webhook server response: $RESPONSE"
