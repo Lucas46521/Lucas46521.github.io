@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Identify Repository and Event
         run: |
-          REPOSITORY=${{ github.repository }}
+          REPOSITORY=${{ github.repository.name }}
           EVENT=${{ github.event_name }}
           echo "Repository: $REPOSITORY"
           echo "Event: $EVENT"
