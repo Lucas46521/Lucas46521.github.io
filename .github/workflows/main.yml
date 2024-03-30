@@ -33,7 +33,7 @@ jobs:
             {
               "type": "rich",
               "title": "New Changes",
-              "description": "tipo ${{ repository.type }} New changes on ${{ github.repository }} triggered by ${{ github.actor }}",
+              "description": "tipo ${{ repository.payload }} New changes on ${{ github.repository }} triggered by ${{ github.actor }}",
               "color": 2123412,
               "thumbnail": {
                 "url": "https://avatars.githubusercontent.com/u/160980408?v=4"
