@@ -45,7 +45,7 @@ jobs:
               "url": "https://github.com/$REPOSITORY"
             }
           ],
-          "sender": "GitHub"
+          "sender": {"name": "GitHub"}
           }' ${{ secrets.DISCORD_WEBHOOK }})
           echo "Webhook server response: $RESPONSE"
           
