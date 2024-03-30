@@ -16,6 +16,8 @@ jobs:
   webhook-request:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.4
       - name: Identify Repository and Event
         run: |
           REPOSITORY=${{ github.repository.name }}
@@ -42,7 +44,7 @@ jobs:
                 "url": "https://github.com/${{ github.actor_id }}",
                 "icon_url": "https://avatars.githubusercontent.com/u/${{ github.actor_id }}?v=4"
               },
-              "url": "${{ github.repository.url }}"
+              "url": "https://github.com/$REPOSITORY"
             }
           ]
           }' ${{ secrets.DISCORD_WEBHOOK }})
