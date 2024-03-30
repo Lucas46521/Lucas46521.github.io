@@ -20,7 +20,6 @@ jobs:
         uses: actions/checkout@v2.3.4
       - name: Identify Repository and Event
         run: |
-          REPOSITORY=${{ github.repository.name }}
           EVENT=${{ github.event_name }}
           echo "Repository: $REPOSITORY"
           echo "Event: $EVENT"
@@ -34,7 +33,7 @@ jobs:
             {
               "type": "rich",
               "title": "New Changes",
-              "description": "New changes on ${{ github.repository }} triggered by ${{ github.actor }}",
+              "description": "tipo= ${{ repository.type }} New changes on ${{ github.repository }} triggered by ${{ github.actor }}",
               "color": 2123412,
               "thumbnail": {
                 "url": "https://avatars.githubusercontent.com/u/160980408?v=4"
@@ -44,7 +43,7 @@ jobs:
                 "url": "https://github.com/${{ github.actor_id }}",
                 "icon_url": "https://avatars.githubusercontent.com/u/${{ github.actor_id }}?v=4"
               },
-              "url": "https://github.com/${{ github.repository_url }}"
+              "url": "https://github.com/${{ github.repository }}"
             }
           ]
           }' ${{ secrets.DISCORD_WEBHOOK }})
