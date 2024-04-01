@@ -26,9 +26,9 @@ jobs:
       - name: Send a request to webhook
         if: success()
         run: |
-          RESPONSE=$(curl -H "X-GitHub-Api-Version: 2022-11-28" \ -H "Content-Type: application/json" -X POST -d '{
+          RESPONSE=$(curl -H "Content-Type: application/json" -X POST -d '{
           "username": "GitHub",
-          "content": "${{ github.repository.name }}",
+          "content": "",
           "embeds": [
             {
               "type": "rich",
